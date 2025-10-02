@@ -2,19 +2,18 @@ class Solution {
     public List<String> fizzBuzz(int n) {
         List<String> answer=new ArrayList<>(n);
         for(int i=1;i<=n;i++){
-            if(i%3==0&&i%5==0){
-                answer.add("FizzBuzz");
+            StringBuilder sb=new StringBuilder();
+            if(i%3==0){
+                sb.append("Fizz");
             }
-            else if(i%3==0){
-                answer.add("Fizz");
+            if(i%5==0){
+                sb.append("Buzz");
             }
-            else if(i%5==0){
-                answer.add("Buzz");
+            if(sb.length()==0){
+                sb.append(String.valueOf(i));
             }
-            else{
-                answer.add(String.valueOf(i));
-            }
+            answer.add(sb.toString());
+        }
+        return answer;
     }
-    return answer;
-}
 }
