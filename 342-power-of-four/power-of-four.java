@@ -1,7 +1,9 @@
 class Solution {
     public boolean isPowerOfFour(int n) {
-        if(n<=0) return false;
-        double sol=Math.log(n)/Math.log(4);
-        return(Math.abs(Math.round(sol)-sol)<1e-10);
+        if (n<=0){
+            return false;
+        }
+        double ans=Math.log(n)/Math.log(4);
+        return(Math.abs(Math.round(ans)-ans)<1e-10);
     }
 }
