@@ -6,10 +6,11 @@
  * };
  */
 bool hasCycle(struct ListNode *head) {
+    if(head==0) return false;
     int i=0;
-    while(head!=0&&i<10000){
+    while(head->next!=0&&i<10000){
         head=head->next;
         i++;
     }
-    return (head!=NULL);
+    return (head->next!=NULL);
 }
