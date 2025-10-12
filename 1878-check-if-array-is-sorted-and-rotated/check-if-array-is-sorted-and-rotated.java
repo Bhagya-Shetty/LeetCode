@@ -1,21 +1,11 @@
 class Solution {
     public boolean check(int[] nums) {
-        int n=nums.length;
-        int sorted=0;
-        for(int i=1;i<=n;i++){
-            sorted=1;
-            for(int j=1;j<n;j++){
-                if(nums[j]<nums[j-1]){
-                    int temp=nums[0];
-                    for(int k=0;k<n-1;k++){
-                        nums[k]=nums[k+1];
-                    }
-                    nums[n-1]=temp;
-                    sorted=0;
-                }
+        int count=0;
+        for(int i=0;i<nums.length;i++){
+            if(nums[i]>nums[(i+1)%nums.length]){
+                count++;
+            }
         }
-        if(sorted==1) break;
+        return count<=1;
     }
-    return (sorted==1? true:false);
-}
 }
