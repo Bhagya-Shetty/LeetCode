@@ -7,6 +7,6 @@ class Solution {
                 return i;
             }
         }
-        return (nums[0]>nums[1])? 0:n-1;
+        return nums[0]>nums[1]? 0:n-1;
     }
 }
