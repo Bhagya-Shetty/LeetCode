@@ -1,13 +1,11 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
         int n=nums.length;
-        int res=0;
-        for(int i=0;i<n;i++){
-            res^=nums[i];
-            if((i+1)%2==0&&res!=0){
-                return nums[i-1];
+        for(int i=0;i<n-1;i+=2){
+            if(nums[i]!=nums[i+1]){
+                return nums[i];
             }
         }
-        return res;
+        return nums[n-1];
     }
 }
