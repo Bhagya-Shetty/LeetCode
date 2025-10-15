@@ -7,8 +7,6 @@
  * };
  */
 
-
-
 struct TreeNode* invertTree(struct TreeNode* root) {
     struct TreeNode *temp = root;
     if(temp){
