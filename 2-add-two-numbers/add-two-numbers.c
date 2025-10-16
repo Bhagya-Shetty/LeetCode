@@ -33,13 +33,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
         if(temp->next!=0){
             temp=temp->next;
         }
-    }
-    if(l1==0&&l2==0&&c==1){
-        struct ListNode*newNode=(struct ListNode*) malloc(sizeof(struct ListNode));
-        temp->next=newNode;
-        newNode->val=1;
-        newNode->next=NULL;
-    }
+    }   
     while(l1!=0){
         int value=l1->val+c;
         if(value>=10){
@@ -72,7 +66,7 @@ struct ListNode* addTwoNumbers(struct ListNode* l1, struct ListNode* l2) {
             temp=temp->next;
         }
     }
-    if(c!=0){
+    if(l1==0&&l2==0&&c==1){
         struct ListNode*newNode=(struct ListNode*) malloc(sizeof(struct ListNode));
         temp->next=newNode;
         newNode->val=1;
