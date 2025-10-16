@@ -1,4 +1,3 @@
-import java.util.*;
 class Solution {
     public void reverse(int[] nums,int start,int end){
         while(start<end){
@@ -11,8 +10,8 @@ class Solution {
     }
     public void rotate(int[] nums, int k) {
         int n=nums.length;
+        if(n==1) return;
         k%=n;
-        if (k == 0 || n == 1) return;
         reverse(nums,0,n-1);
         reverse(nums,0,k-1);
         reverse(nums,k,n-1);
