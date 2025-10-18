@@ -13,12 +13,7 @@ class Solution {
             }
         }
         arr.add(sum);
-        max=arr.get(0);
-        for(int i=1;i<arr.size();i++){
-            if(arr.get(i)>max){
-                max=arr.get(i);
-            }
-        }
+        max=Collections.max(arr);
         return max;
     }
 }
