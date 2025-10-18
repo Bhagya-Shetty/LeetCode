@@ -1,6 +1,6 @@
 class Solution {
     public int findMaxConsecutiveOnes(int[] nums) {
-        int max;
+        int max=0;
         int sum=0;
         List<Integer> arr=new ArrayList<>();
         for(int num:nums){
@@ -8,12 +8,15 @@ class Solution {
             sum+=num;
             }
             else{
-                arr.add(sum);
+                if(sum>max){
+                    max=sum;
+                }
                 sum=0;
             }
         }
-        arr.add(sum);
-        max=Collections.max(arr);
+        if(sum>max){
+            max=sum;
+        }
         return max;
     }
 }
