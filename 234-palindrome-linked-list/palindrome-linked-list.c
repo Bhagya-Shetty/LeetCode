@@ -8,7 +8,7 @@
 bool isPalindrome(struct ListNode* head) {
     if(head->next==0) return true;
     int count=0,i=1;
-    struct ListNode*temp=head,*temp1,*head2;
+    struct ListNode*temp=head,*temp1;
     while(temp!=0){
         count++;
         temp=temp->next;
@@ -18,9 +18,11 @@ bool isPalindrome(struct ListNode* head) {
         temp=temp->next;
         i++;
     }
-    if(count%2==0) head2=temp->next;
-    else head2=temp->next->next;
+    if(count%2==0) temp1=temp->next;
+    else temp1=temp->next->next;
     temp->next=0;
+
+    struct ListNode*head2=temp1;
     struct ListNode*prev=NULL,*curr=head2,*next=NULL;
     while(curr!=0){
         next=curr->next;
