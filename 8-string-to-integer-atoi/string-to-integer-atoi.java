@@ -12,7 +12,7 @@ class Solution {
             }
             i++;
         }
-        while(i<s.length()&&s.charAt(i)>=48&&s.charAt(i)<=57){
+        while(i<s.length()&&Character.isDigit(s.charAt(i))){
             int n=s.charAt(i)-'0';
             num=(num*10)+n;
             if(sign==1&&num>Integer.MAX_VALUE){
