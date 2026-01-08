@@ -4,12 +4,12 @@ class Solution {
         if (n%2!=0) return false;
         Stack<Character> stack= new Stack<Character>();
         for(int i=0;i<n;i++){
-            if(s.charAt(i)=='('||s.charAt(i)=='{'||s.charAt(i)=='[') stack.push(s.charAt(i));
+            char c=s.charAt(i);
+            if(c=='('||c=='{'||c=='[') stack.push(c);
             else{
                 if(stack.isEmpty()) return false;
                 char top=stack.pop();
-                if(top=='['&&s.charAt(i)==']'||top=='{'&&s.charAt(i)=='}'||top=='('&&s.charAt(i)==')') continue;
-                else return false;
+                if(top=='['&&c!=']'||top=='{'&&c!='}'||top=='('&&c!=')') return false;
             }
         }
         return stack.isEmpty();
