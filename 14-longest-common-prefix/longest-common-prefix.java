@@ -5,8 +5,7 @@ class Solution {
         for(int i=0;i<strs[0].length();i++){
             ch=strs[0].charAt(i);
             for(String s:strs){
-                if(i>=s.length()) return sb.toString();
-                if(s.charAt(i)!=ch) return sb.toString();
+                if(i>=s.length()||s.charAt(i)!=ch) return sb.toString();
             }
             sb.append(ch);
         }
