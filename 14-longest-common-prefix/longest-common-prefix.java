@@ -4,7 +4,8 @@ class Solution {
         char ch;
         for(int i=0;i<strs[0].length();i++){
             ch=strs[0].charAt(i);
-            for(String s:strs){
+            for(int j=1;j<strs.length;j++){
+                String s=strs[j];
                 if(i>=s.length()||s.charAt(i)!=ch) return sb.toString();
             }
             sb.append(ch);
